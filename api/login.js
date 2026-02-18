@@ -2,6 +2,7 @@ export default function handler(req,res){
   const {id,pass}=req.query;
   const LICENSES=[
     {id:"demo10",pass:"demo10",exp:"2026-03-01"},
+    {id:"mahabubremon925",pass:"Remon@1200",exp:"2028-03-01"},
     {id:"client1",pass:"client123",exp:"2026-12-31"}
   ];
   const u=LICENSES.find(x=>x.id===id&&x.pass===pass);
