@@ -80,3 +80,6 @@ function updateStats(){
 }
 function line(t){ const d=document.createElement("div"); d.textContent=t; log.appendChild(d); log.scrollTop=log.scrollHeight; }
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+
+const y = document.getElementById("year");
+if (y) y.textContent = new Date().getFullYear();
