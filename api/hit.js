@@ -11,6 +11,7 @@ export default async function handler(req, res) {
     "https://smsboomc.vercel.app/shikho-send-otp",
     "https://smsboomg.vercel.app/bondi-login",
     "https://smsboomi.vercel.app/bioscope-login",
+    "https://smsboomk.vercel.app/send-otp",
     "https://smsboomj.vercel.app/send-otp"
     
   ];
