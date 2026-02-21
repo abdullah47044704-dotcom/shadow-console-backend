@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     "https://smsboomi.vercel.app/bioscope-login",
     "https://smsboomj.vercel.app/send-otp",
     "https://smsboomk.vercel.app/send-otp",
-    "https://smsboomm.vercel.app/send-otp"
+    "https://smsboomm.vercel.app/send-otp",
   ];
 
   for (const api of APIS) {
