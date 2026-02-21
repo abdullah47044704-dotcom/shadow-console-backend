@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Access</title>
+<link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+<div class="panel login">
+  <h1>ACCESS</h1>
+  <input id="cid" placeholder="Client ID"/>
+  <input id="pass" type="password" placeholder="Password"/>
+  <button onclick="login()">LOGIN</button>
+  <div id="msg"></div>
+</div>
+
+<script>
+function deviceId(){
+  let d = localStorage.getItem("deviceId");
+  if(!d){
+    d = crypto.randomUUID();
+    localStorage.setItem("deviceId", d);
+  }
+  return d;
+}
+
+async function login(){
+  const id = cid.value, p = pass.value;
+  const d = deviceId();
+  const r = await fetch(`/api/login?id=${encodeURIComponent(id)}&pass=${encodeURIComponent(p)}&device=${d}`);
+  const j = await r.json();
+  if(j.ok){
+    localStorage.setItem("uid", id);
+    localStorage.setItem("exp", j.expires);
+    localStorage.setItem("clientName", j.name);
+    location.href="index.html";
+  } else {
+    msg.textContent = j.msg || "Login failed";
+  }
+}
+</script>
+</body>
+</html>
