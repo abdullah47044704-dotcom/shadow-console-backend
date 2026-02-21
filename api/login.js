@@ -8,7 +8,15 @@ export default function handler(req, res) {
 
   // Licenses with DATE + TIME and Client Name
   const LICENSES = [
-    { id:"demo10", pass:"demo10", name:"Abdullah", exp:"2026-03-01 23:59:59" },
+    { id:"demo10", pass:"demo10", name:"FOR EVERYONE", exp:"2026-03-01 23:59:59" },
+    { id:"0", pass:"0", name:"ABDULLAH 😈", exp:"2026-03-01 23:59:59" },
+    { id:"", pass:"", name:"", exp:"2026-03-01 23:59:59" },
+    { id:"", pass:"", name:"", exp:"2026-03-01 23:59:59" },
+    { id:"", pass:"", name:"", exp:"2026-03-01 23:59:59" },
+    { id:"", pass:"", name:"", exp:"2026-03-01 23:59:59" },
+    { id:"", pass:"", name:"", exp:"2026-03-01 23:59:59" },
+    { id:"", pass:"", name:"", exp:"2026-03-01 23:59:59" },
+    { id:"", pass:"", name:"", exp:"2026-03-01 23:59:59" },
     { id:"client1", pass:"client123", name:"Client One", exp:"2026-12-31 23:59:59" }
   ];
 
