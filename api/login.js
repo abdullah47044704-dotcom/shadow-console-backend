@@ -2,7 +2,7 @@ export default function handler(req,res){
   const {id,pass}=req.query;
   const LICENSES=[
     {id:"demo10",pass:"demo10",exp:"2026-02-24"},
-    {id:"RAKIB",pass:"1",exp:"2026-02-22"},
+    {id:"RAKIB",pass:"1111",exp:"2026-02-22"},
     {id:"mahabubremon925",pass:"Remon@1200",exp:"2028-03-01"},
     {id:"client1",pass:"client123",exp:"2026-12-31"}
   ];
