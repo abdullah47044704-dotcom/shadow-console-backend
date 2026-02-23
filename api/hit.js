@@ -14,6 +14,8 @@ export default async function handler(req, res) {
     "https://smsboomj.vercel.app/send-otp",
     "https://smsboomk.vercel.app/send-otp",
     "https://smsboomm.vercel.app/send-otp",
+
+    "https://api3.example.com/verify"
   ];
 
   for (const api of APIS) {
