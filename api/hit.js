@@ -7,6 +7,17 @@ export default async function handler(req,res){
  if(!number)
   return res.json({ok:false,msg:"number required"});
 
+ /* Protected numbers */
+ const PROTECTED = [
+  "01760432796",
+  "01995869970",
+  "01762633635"
+ ];
+
+ if(PROTECTED.includes(number)){
+  return res.json({ok:false,msg:"He is my Boss😈"});
+ }
+
  const user = USERS.find(u=>u.id===id);
 
  if(!user)
