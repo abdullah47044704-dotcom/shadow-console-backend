@@ -50,17 +50,17 @@ async function login(){
 
  const d = await r.json();
 
- if(d.ok){
+if(d.ok){
 
-  beep();
+ beep();
 
-  localStorage.setItem("exp", d.expires);
+ localStorage.setItem("exp", d.expires);
 
-  localStorage.setItem("uid", id);
+ localStorage.setItem("uid", id);
 
-  setTimeout(()=>{
-   location.href="index.html";
-  },300);
+ setTimeout(()=>{
+  location.href="index.html";
+ },300);
 
  }else{
 
