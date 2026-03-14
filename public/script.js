@@ -137,11 +137,11 @@ startBtn.onclick = async ()=>{
    const d = await r.json();
 
    if(d.ok){
-    sent++;
-    line("✓ sent");
-   }else{
-    failed++;
-    line("✗ blocked / offline");
+  sent++;
+  line("✓ sent");
+}else{
+  failed++;
+  line("✗ " + (d.msg || "blocked"));
    }
 
   }catch(e){
