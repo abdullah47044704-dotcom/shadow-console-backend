@@ -230,17 +230,18 @@ const musicBtn = document.getElementById("musicBtn");
 music.volume = 0.5;
 
 window.addEventListener("load",()=>{
- music.play().catch(()=>{});
+  music.play().catch(()=>{});
 });
 
-musicBtn.onclick=()=>{
+musicBtn.addEventListener("click",()=>{
 
- if(music.muted){
-  music.muted=false;
-  musicBtn.innerHTML="🔊";
- }else{
-  music.muted=true;
-  musicBtn.innerHTML="🔇";
- }
+  if(music.muted === true){
+    music.muted = false;
+    musicBtn.textContent = "🔊";
+  }
+  else{
+    music.muted = true;
+    musicBtn.textContent = "🔇";
+  }
 
-};
+});
