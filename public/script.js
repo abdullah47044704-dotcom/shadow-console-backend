@@ -227,25 +227,38 @@ document.addEventListener("touchstart",e=>{
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
 
-music.volume = 0.5;
+let started = false;
 
-document.addEventListener("click",()=>{
-  music.play().catch(()=>{});
-},{once:true});
+function startMusic(){
 
-window.addEventListener("load",()=>{
-  music.play().catch(()=>{});
-});
+ if(!started){
+  music.volume = 0.5;
+
+  music.play()
+   .then(()=>{})
+   .catch(()=>{});
+
+  started = true;
+ }
+
+}
+
+/* first user interaction */
+
+document.addEventListener("click",startMusic);
+document.addEventListener("touchstart",startMusic);
+
+/* mute button */
 
 musicBtn.addEventListener("click",()=>{
 
-  if(music.muted === true){
-    music.muted = false;
-    musicBtn.textContent = "🔊";
-  }
-  else{
-    music.muted = true;
-    musicBtn.textContent = "🔇";
-  }
+ if(music.muted){
+  music.muted=false;
+  musicBtn.textContent="🔊";
+ }
+ else{
+  music.muted=true;
+  musicBtn.textContent="🔇";
+ }
 
 });
