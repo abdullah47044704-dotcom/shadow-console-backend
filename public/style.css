@@ -24,38 +24,36 @@ button:hover{filter:brightness(1.1)}
   box-shadow:inset 0 0 0 1px #0f3;font-size:.85rem}
 @media(max-width:420px){.terminal{height:160px}}
 
-.dev-banner{
+.dev-credit{
  position:fixed;
- bottom:0;
- left:0;
- width:100%;
- text-align:center;
- padding:12px;
- background:linear-gradient(90deg,#00ff88,#00ffaa,#00ff88);
- font-size:18px;
- font-weight:bold;
- letter-spacing:3px;
- color:#020412;
+ bottom:15px;
+ left:50%;
+ transform:translateX(-50%);
+ padding:8px 20px;
+ border-radius:30px;
+ background:rgba(0,0,0,0.6);
+ backdrop-filter:blur(10px);
+ border:1px solid #2cff9a;
  z-index:9999;
- overflow:hidden;
- animation:bannerMove 6s linear infinite;
- box-shadow:0 0 15px #00ff88,0 0 30px #00ff88;
+ box-shadow:0 0 15px #2cff9a;
 }
 
-.dev-banner span{
- animation:glow 1.5s ease-in-out infinite alternate;
+.dev-text{
+ font-size:14px;
+ letter-spacing:3px;
+ color:#2cff9a;
+ font-weight:bold;
+ animation: glowText 1.5s infinite alternate;
 }
 
-@keyframes bannerMove{
- 0%{background-position:0%}
- 100%{background-position:200%}
-}
+/* glow animation */
 
-@keyframes glow{
+@keyframes glowText{
  from{
-  text-shadow:0 0 5px #00ff88,0 0 10px #00ff88;
+  text-shadow:0 0 5px #2cff9a;
  }
  to{
-  text-shadow:0 0 20px #00ff88,0 0 40px #00ffaa;
+  text-shadow:0 0 20px #2cff9a,0 0 40px #00ffcc;
  }
 }
+
