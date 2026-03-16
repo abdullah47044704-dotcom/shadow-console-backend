@@ -179,3 +179,45 @@ function line(t){
 }
 
 const sleep = ms => new Promise(r=>setTimeout(r,ms));
+
+
+
+const shockCanvas = document.getElementById("shockCanvas");
+const sctx = shockCanvas.getContext("2d");
+
+shockCanvas.width = window.innerWidth;
+shockCanvas.height = window.innerHeight;
+
+function electric(x,y){
+
+ for(let i=0;i<15;i++){
+
+  const angle = Math.random()*Math.PI*2;
+  const length = 20+Math.random()*40;
+
+  sctx.beginPath();
+  sctx.moveTo(x,y);
+  sctx.lineTo(
+   x+Math.cos(angle)*length,
+   y+Math.sin(angle)*length
+  );
+
+  sctx.strokeStyle="#2cff9a";
+  sctx.lineWidth=2;
+  sctx.stroke();
+
+ }
+
+ setTimeout(()=>{
+  sctx.clearRect(0,0,shockCanvas.width,shockCanvas.height);
+ },100);
+}
+
+document.addEventListener("click",e=>{
+ electric(e.clientX,e.clientY);
+});
+
+document.addEventListener("touchstart",e=>{
+ const t=e.touches[0];
+ electric(t.clientX,t.clientY);
+});
