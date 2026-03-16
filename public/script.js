@@ -227,28 +227,32 @@ document.addEventListener("touchstart",e=>{
 const music = document.getElementById("bgMusic");
 const musicBtn = document.getElementById("musicBtn");
 
-let started = false;
+/* autoplay workaround */
 
-function startMusic(){
+window.addEventListener("load",()=>{
 
- if(!started){
-  music.volume = 0.5;
+ music.volume = 0.5;
 
-  music.play()
-   .then(()=>{})
-   .catch(()=>{});
+ /* try play */
 
-  started = true;
- }
+ music.play().catch(()=>{});
 
-}
+});
 
 /* first user interaction */
 
-document.addEventListener("click",startMusic);
-document.addEventListener("touchstart",startMusic);
+document.addEventListener("click",()=>{
 
-/* mute button */
+ if(music.muted){
+  music.muted = false;
+ }
+
+ music.play().catch(()=>{});
+
+},{once:true});
+
+
+/* mute toggle */
 
 musicBtn.addEventListener("click",()=>{
 
