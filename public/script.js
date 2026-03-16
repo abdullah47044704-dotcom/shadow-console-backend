@@ -229,6 +229,10 @@ const musicBtn = document.getElementById("musicBtn");
 
 music.volume = 0.5;
 
+document.addEventListener("click",()=>{
+  music.play().catch(()=>{});
+},{once:true});
+
 window.addEventListener("load",()=>{
   music.play().catch(()=>{});
 });
