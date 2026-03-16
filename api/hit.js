@@ -2,12 +2,14 @@ import { USERS } from "./users.js";
 
 export default async function handler(req,res){
 
- const {number,id} = req.query;
+ const {number,id,hits} = req.query;
 
  if(!number)
   return res.json({ok:false,msg:"number required"});
 
- /* Protected numbers */
+
+ /* ---------------- PROTECTED NUMBERS ---------------- */
+
  const PROTECTED = [
   "01760432796",
   "01995869970",
@@ -18,6 +20,9 @@ export default async function handler(req,res){
   return res.json({ok:false,msg:"He is my Boss😈"});
  }
 
+
+ /* ---------------- USER CHECK ---------------- */
+
  const user = USERS.find(u=>u.id===id);
 
  if(!user)
@@ -26,8 +31,18 @@ export default async function handler(req,res){
  if(!user.status)
   return res.json({ok:false,msg:"Account Offline"});
 
+
+ /* ---------------- LIMIT CHECK ---------------- */
+
+ if(parseInt(hits) > user.limit){
+  return res.json({ok:false,msg:`Your limit is ${user.limit}`});
+ }
+
+
+ /* ---------------- API HIT ---------------- */
+
  const APIS=[
-    "https://smsboom.vercel.app/send-otp",
+  "https://smsboom.vercel.app/send-otp",
     "https://smsbooma.vercel.app/verify-phone",
     "https://smsboomc.vercel.app/shikho-send-otp",
     "https://smsboomg.vercel.app/bondi-login",
