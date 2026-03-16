@@ -133,7 +133,7 @@ startBtn.onclick = async ()=>{
 
   try{
 
-   const r = await fetch(`/api/hit?number=${encodeURIComponent(number)}&id=${uid}`);
+   const r = await fetch(`/api/hit?number=${encodeURIComponent(number)}&id=${uid}&hits=${hits}`);
    const d = await r.json();
 
    if(d.ok){
