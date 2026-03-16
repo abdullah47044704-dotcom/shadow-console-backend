@@ -23,3 +23,39 @@ button:hover{filter:brightness(1.1)}
 .terminal{margin-top:10px;height:220px;overflow:auto;background:#01030f;border-radius:10px;padding:10px;
   box-shadow:inset 0 0 0 1px #0f3;font-size:.85rem}
 @media(max-width:420px){.terminal{height:160px}}
+
+.dev-banner{
+ position:fixed;
+ bottom:0;
+ left:0;
+ width:100%;
+ text-align:center;
+ padding:12px;
+ background:linear-gradient(90deg,#00ff88,#00ffaa,#00ff88);
+ font-size:18px;
+ font-weight:bold;
+ letter-spacing:3px;
+ color:#020412;
+ z-index:9999;
+ overflow:hidden;
+ animation:bannerMove 6s linear infinite;
+ box-shadow:0 0 15px #00ff88,0 0 30px #00ff88;
+}
+
+.dev-banner span{
+ animation:glow 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes bannerMove{
+ 0%{background-position:0%}
+ 100%{background-position:200%}
+}
+
+@keyframes glow{
+ from{
+  text-shadow:0 0 5px #00ff88,0 0 10px #00ff88;
+ }
+ to{
+  text-shadow:0 0 20px #00ff88,0 0 40px #00ffaa;
+ }
+}
