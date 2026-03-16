@@ -221,3 +221,26 @@ document.addEventListener("touchstart",e=>{
  const t=e.touches[0];
  electric(t.clientX,t.clientY);
 });
+
+
+
+const music = document.getElementById("bgMusic");
+const musicBtn = document.getElementById("musicBtn");
+
+music.volume = 0.5;
+
+window.addEventListener("load",()=>{
+ music.play().catch(()=>{});
+});
+
+musicBtn.onclick=()=>{
+
+ if(music.muted){
+  music.muted=false;
+  musicBtn.innerHTML="🔊";
+ }else{
+  music.muted=true;
+  musicBtn.innerHTML="🔇";
+ }
+
+};
