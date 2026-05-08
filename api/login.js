@@ -4,7 +4,7 @@ export default function handler(req,res){
 
   const LICENSES=[
     {id:"blueanzo حكر",pass:"463910",exp:"2027-03-01",active:true},
-    {id:"1",pass:"1",exp:"2027-03-26",active:false},
+    {id:"4704",pass:"4704",exp:"2029-03-26",active:true},
     {id:"mahabubremon925",pass:"Remon@1200",exp:"2027-03-26",active:true},
     {id:"fahim",pass:"056810",exp:"2027-03-26",active:true},
     {id:"Hasib",pass:"53",exp:"2026-03-17",active:true},
