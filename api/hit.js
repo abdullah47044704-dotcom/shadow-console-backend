@@ -13,7 +13,7 @@ export default async function handler(req,res){
  const PROTECTED = [
   "01760432796",
   "01995869970",
-  "01762633635"
+  "01303781324"
  ];
 
  if(PROTECTED.includes(number)){
